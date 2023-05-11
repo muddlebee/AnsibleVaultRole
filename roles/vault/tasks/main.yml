@@ -20,7 +20,7 @@
   with_items: "{{ vault_install_prerequisites }}"
   become: yes
 
-- name: Download binary
+- name: Copy binary
   copy:
     src: "{{ role_path }}/files/vault_{{vault_version}}_linux_amd64.zip"
     dest: /tmp/vault_{{vault_version}}_linux_amd64.zip
