@@ -27,6 +27,7 @@
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
     mode: 0755
+  register: vault_download
 
 - name: "Unzip vault archive"
   unarchive:
