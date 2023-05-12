@@ -1,11 +1,8 @@
-storage "s3" {
-  access_key = "ACCESS_KEY_HERE"
-  secret_key = "SECRET_KEY_HERE"
-  bucket     = "vault-secret"
-  region	 = "us-east-2"
+storage "file" {
+  path = "{{ vault_data_dir }}"
 }
-
 listener "tcp" {
 	address     = "0.0.0.0:8200"
 	tls_disable = 1
 }
+api_addr = "{{ vault_addr }}"

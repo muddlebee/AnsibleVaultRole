@@ -5,3 +5,5 @@ vault_install_prerequisites: ['unzip']
 vault_user: "centos"
 vault_group: "centos"
 vault_config_path: "/etc/vault.hcl"
+vault_data_dir: /var/vault
+vault_addr: "http://127.0.0.1:8200"
