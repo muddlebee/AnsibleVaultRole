@@ -67,8 +67,13 @@
     group: "{{ vault_group }}"
     mode: 0755
 
-- name: vault service
-  service:
-    name: vault
-    state: started
-    enabled: yes
+# - name: vault service
+#   service:
+#     name: vault
+#     state: started
+#     enabled: yes
+
+- name: Start Vault
+  shell: "/usr/local/bin/vault server -config=/etc/vault.hcl > /dev/null 2>&1 &"
+  args:
+    executable: /bin/bash
