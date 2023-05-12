@@ -59,6 +59,14 @@
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
 
+- name: Create Vault data directory
+  file:
+    path: "{{ vault_data_dir }}"
+    state: directory
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0755
+
 - name: vault service
   service:
     name: vault
