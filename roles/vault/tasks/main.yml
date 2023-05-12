@@ -52,12 +52,12 @@
     group: root
   notify: systemd_reload
 
-# - name: config file
-#   template:
-#     src: vault.hcl.j2
-#     dest: "{{ vault_config_path }}"
-#     owner: "{{ vault_user }}"
-#     group: "{{ vault_group }}"
+- name: config file
+  template:
+    src: vault.hcl.j2
+    dest: "{{ vault_config_path }}"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
 
 - name: vault service
   service:
